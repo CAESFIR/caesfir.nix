@@ -38,11 +38,11 @@
   # CoolerControl
     coolercontrol.enable = true;
   # Hyprland
-    hyprland = {
-      enable = true;
-      withUWSM = true;
-      xwayland.enable = true;
-    };
+#     hyprland = {
+#       enable = true;
+#       withUWSM = true;
+#       xwayland.enable = true;
+#     };
   # XWayland
     xwayland.enable = true;
   # AppImage
