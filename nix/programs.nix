@@ -38,11 +38,13 @@
   # CoolerControl
     coolercontrol.enable = true;
   # Hyprland
-#     hyprland = {
-#       enable = true;
-#       withUWSM = true;
-#       xwayland.enable = true;
-#     };
+    hyprland = {
+      enable = true;
+      withUWSM = true;
+      xwayland.enable = true;
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    };
   # XWayland
     xwayland.enable = true;
   # AppImage

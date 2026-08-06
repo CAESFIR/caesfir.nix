@@ -32,6 +32,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
       };
+  ### Hyprland
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      };
   ### WM
     noctalia = {
       url = "github:noctalia-dev/noctalia";
@@ -53,6 +57,7 @@
     firefox-nightly,               # Firefox Nightly
     millennium,                    # Millennium
     plasma-manager,                # Plasma Manager
+    hyprland,                      # Hyprland
     noctalia,                      # Noctalia Shell
     caelestia,                     # Caelestia Shell
     ...
@@ -68,5 +73,13 @@
         ];
       };
     };
+
+  # Home Manager
+    homeConfigurations = {
+      "CAESFIR@ZIN" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      };
+    };
+
   };
 }
