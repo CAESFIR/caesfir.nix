@@ -7,18 +7,18 @@
   ### Import
   imports =
     [
-      ./nix/boot.nix
-      ./nix/environment.nix
-      ./nix/fonts.nix
-      ./nix/hardware.nix
-      ./nix/hm.nix
-      ./nix/libraries.nix
-      ./nix/modules.nix
-      ./nix/multilib.nix
-      ./nix/overlay.nix
-      ./nix/programs.nix
-      ./nix/services.nix
-      ./nix/virtualisation.nix
+    ### Nix
+      ../system/boot.nix
+      ../system/environment.nix
+      ../system/fonts.nix
+      ../system/hardware.nix
+      ../system/libraries.nix
+      ../system/modules.nix
+      ../system/multilib.nix
+      ../system/overlay.nix
+      ../system/programs.nix
+      ../system/services.nix
+      ../system/virtualisation.nix
     ];
 
     nix.extraOptions = ''
@@ -101,10 +101,7 @@
   ### XDG Portal
   xdg.portal.enable = true;
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  ### Users / Groups
   users.users.CAESFIR = {
     shell = pkgs.zsh;
     isNormalUser = true;
@@ -127,32 +124,6 @@
     gid = 1000;
   };
 
-  # programs.firefox.enable = true;
-
-  # List packages installed in system profile.
-  # You can use https://search.nixos.org/ to find more packages (and options).
-  # environment.systemPackages = with pkgs; [
-  #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #   wget
-  # ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
   networking.firewall.enable = false;
 
 }

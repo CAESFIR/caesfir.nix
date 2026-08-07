@@ -67,17 +67,11 @@
     nixosConfigurations = {
       ZIN = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit inputs self; };
+        specialArgs = { inherit inputs; };
         modules = [
-          ./configuration.nix
+          ./main/system.nix
+          ./main/user.nix
         ];
-      };
-    };
-
-  # Home Manager
-    homeConfigurations = {
-      "CAESFIR@ZIN" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
       };
     };
 
