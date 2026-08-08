@@ -25,6 +25,13 @@
       !include /etc/nix/git.conf
     '';
 
+    environment = {
+      homeBinInPath = true;
+      localBinInPath = true;
+      };
+
+    environment.stub-ld.enable = true;
+
   # Hyprland Cachix
     nix.settings = {
      substituters = ["https://hyprland.cachix.org"];

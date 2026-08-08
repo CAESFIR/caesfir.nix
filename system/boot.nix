@@ -85,6 +85,13 @@
 
   nixpkgs.hostPlatform = "x86_64-linux";
 
+  boot = {
+    tmp = {
+      useTmpfs = true;
+#       useZram = true;
+      };
+    };
+
 ### Grub
   boot = {
     consoleLogLevel = 0;
