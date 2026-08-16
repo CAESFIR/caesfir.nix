@@ -26,6 +26,10 @@
       url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
       inputs.nixpkgs.follows = "nixpkgs";
       };
+    spicetify = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      };
   ### Plasma
     plasma-manager = {
       url = "github:nix-community/plasma-manager";
@@ -45,11 +49,6 @@
       url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
       };
-  ### Apps
-    spicetify = {
-      url = "github:Gerg-L/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-      };
 ##### Flake-Less
 
   };
@@ -63,11 +62,11 @@
     nixos-conf-editor,             # Nix Conf Editor
     firefox-nightly,               # Firefox Nightly
     millennium,                    # Millennium
+    spicetify,                     # Spicetify
     plasma-manager,                # Plasma Manager
     hyprland,                      # Hyprland
     noctalia,                      # Noctalia Shell
     caelestia,                     # Caelestia Shell
-    spicetify,                     # Spicetify
     ...
     }: {
 
