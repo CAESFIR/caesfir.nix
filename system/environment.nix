@@ -23,25 +23,27 @@
         (discord-development.override {
         withOpenASAR = true;
         })
-        vesktop
     ## Tools
         curl
         wget
 #         wine-staging                    # WINE
 #         android-translation-layer       # ATL
-        lilipod
-        arch-install-scripts
+#         lilipod
+#         arch-install-scripts
+        steamguard-cli
 #         steamcmd
         gparted
-        ouch
+#         ouch
         efibootmgr
-        patchelf
-        auto-patchelf
-        unar
+#         patchelf
+#         auto-patchelf
+#         unar
+#         winetricks
+        joplin-desktop
     ## File Systems
         btrfs-progs                     # BTRFS
         e2fsprogs                       # EXT4
-        ntfsprogs-plus                  # NTFS
+#         ntfsprogs-plus                  # NTFS
         exfatprogs                      # EXFAT
         dosfstools                      # FAT32
         mtools                          # FAT32

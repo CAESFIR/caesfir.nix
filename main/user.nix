@@ -13,7 +13,9 @@
           homeDirectory = "/home/CAESFIR";
           };
         imports = [
+          ../user/modules.nix
           ../user/programs.nix
+          ../user/spicetify.nix
           ../user/variables.nix
           ];
         };

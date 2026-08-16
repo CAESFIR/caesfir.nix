@@ -7,6 +7,8 @@
       enable = true;
       antialias = true;
       allowBitmaps = true;
+      useEmbeddedBitmaps = true;
+      includeUserConf = true;
     # Default
       defaultFonts = {
         emoji = [ "Noto Color Emoji" ];
@@ -17,12 +19,12 @@
     # Subpixel
       subpixel = {
         rgba = "rgb";
-        lcdfilter = "default";
+        lcdfilter = "light";
       };
     # Hinting
       hinting = {
         enable = true;
-        style = "full";
+        style = "slight";
       };
     };
   };

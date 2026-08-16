@@ -45,6 +45,13 @@
       url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
       };
+  ### Apps
+    spicetify = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      };
+##### Flake-Less
+
   };
 
   outputs = inputs@{
@@ -60,6 +67,7 @@
     hyprland,                      # Hyprland
     noctalia,                      # Noctalia Shell
     caelestia,                     # Caelestia Shell
+    spicetify,                     # Spicetify
     ...
     }: {
 

@@ -24,13 +24,38 @@
     nix.extraOptions = ''
       !include /etc/nix/git.conf
     '';
+  # XDG
+    xdg = {
+      autostart = {
+        enable = true;
+        install = true;
+        };
+      icons.enable = true;
+      menus.enable = true;
+      mime.enable = true;
+      portal = {
+        enable = true;
+        xdgOpenUsePortal = true;
+        };
+      sounds.enable = true;
+      };
 
     environment = {
       homeBinInPath = true;
       localBinInPath = true;
+      stub-ld.enable = true;
+      sessionVariables = {
+      XDG_DESKTOP_DIR="/I/Home/Desktop";
+      XDG_DOWNLOAD_DIR="/I/Home/Downloads";
+      XDG_PUBLICSHARE_DIR="/I/Home/Public";
+      XDG_PROJECTS_DIR="/I/Home/Projects";
+      XDG_TEMPLATES_DIR="/I/Home/Templates";
+      XDG_DOCUMENTS_DIR="/I/Home/Documents";
+      XDG_PICTURES_DIR="/I/Home/Pictures";
+      XDG_MUSIC_DIR="/I/Home/Music";
+      XDG_VIDEOS_DIR="/I/Home/Videos";
+        };
       };
-
-    environment.stub-ld.enable = true;
 
   # Hyprland Cachix
     nix.settings = {
@@ -71,7 +96,12 @@
 
   security.rtkit.enable = true;
 
-  qt.platformTheme = "kde";
+ # QT
+  qt = {
+    enable = true;
+    style = "breeze";
+    platformTheme = "kde";
+    };
 
 # Nix Settings
   nix.settings = {
@@ -104,9 +134,6 @@
 
   ### UnFree
   nixpkgs.config.allowUnfree = true;
-
-  ### XDG Portal
-  xdg.portal.enable = true;
 
   ### Users / Groups
   users.users.CAESFIR = {
