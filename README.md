@@ -1,6 +1,6 @@
 # I know full well this configuration is half baked and unfinished.
 
-# caesfir.nix
+# feral.nix
 Forever Work-In-Progress!
 
 I'm still learning the ins and outs of Nix and NixOS, and will continue to for the rest of space and time ;p
