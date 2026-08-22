@@ -10,6 +10,7 @@
     ### Nix
       ../system/boot.nix
       ../system/environment.nix
+      ../system/fileSystems.nix
       ../system/fonts.nix
       ../system/hardware.nix
       ../system/libraries.nix
@@ -45,15 +46,15 @@
       localBinInPath = true;
       stub-ld.enable = true;
       sessionVariables = {
-      XDG_DESKTOP_DIR="/I/Home/Desktop";
-      XDG_DOWNLOAD_DIR="/I/Home/Downloads";
-      XDG_PUBLICSHARE_DIR="/I/Home/Public";
-      XDG_PROJECTS_DIR="/I/Home/Projects";
-      XDG_TEMPLATES_DIR="/I/Home/Templates";
-      XDG_DOCUMENTS_DIR="/I/Home/Documents";
-      XDG_PICTURES_DIR="/I/Home/Pictures";
-      XDG_MUSIC_DIR="/I/Home/Music";
-      XDG_VIDEOS_DIR="/I/Home/Videos";
+      XDG_DESKTOP_DIR="/ZIN/XDG/Desktop";
+      XDG_DOCUMENTS_DIR="/ZIN/XDG/Documents";
+      XDG_DOWNLOAD_DIR="/ZIN/XDG/Downloads";
+      XDG_MUSIC_DIR="/ZIN/XDG/Music";
+      XDG_PICTURES_DIR="/ZIN/XDG/Pictures";
+      XDG_PROJECTS_DIR="/ZIN/XDG/Projects";
+      XDG_PUBLICSHARE_DIR="/ZIN/XDG/Public";
+      XDG_TEMPLATES_DIR="/ZIN/XDG/Templates";
+      XDG_VIDEOS_DIR="/ZIN/XDG/Videos";
         };
       };
 

@@ -23,7 +23,7 @@
       enable = true;
     };
   # Plasma Browser Integration
-    chromium.enablePlasmaBrowserIntegration = true;
+    chromium.enablePlasmaBrowserIntegration = false;
   # ZSH
     zsh = {
       enable = true;

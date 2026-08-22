@@ -10,7 +10,7 @@
     # Default
         zlib
         zstd
-        stdenv.cc.cc
+        stdenv.cc.cc.lib
         curl
         openssl
         attr

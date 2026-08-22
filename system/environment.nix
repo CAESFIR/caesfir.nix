@@ -23,15 +23,17 @@
         (discord-development.override {
         withOpenASAR = true;
         })
+      # Vesktop
+        vesktop
     ## Tools
         curl
         wget
-#         wine-staging                    # WINE
-#         android-translation-layer       # ATL
-#         lilipod
-#         arch-install-scripts
+        wine-staging                    # WINE
+        android-translation-layer       # ATL
+        lilipod
+        arch-install-scripts
         steamguard-cli
-#         steamcmd
+        steamcmd
         gparted
 #         ouch
         efibootmgr
@@ -43,7 +45,7 @@
     ## File Systems
         btrfs-progs                     # BTRFS
         e2fsprogs                       # EXT4
-#         ntfsprogs-plus                  # NTFS
+        ntfsprogs-plus                  # NTFS
         exfatprogs                      # EXFAT
         dosfstools                      # FAT32
         mtools                          # FAT32
