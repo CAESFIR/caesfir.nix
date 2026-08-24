@@ -10,28 +10,40 @@
     "/ZIN" = {
       device = "/dev/disk/by-uuid/11111111-7469-7469-7469-111111111111";
       fsType = "btrfs";
-      options = [ "ssd" "rw" "exec" "noatime" "discard=async" "barrier" "datacow" "datasum" "autodefrag" "flushoncommit" "space_cache=v2" "compress-force=zstd:15" "commit=60" "thread_pool=6" ];
+      options = [ "ssd" "rw" "exec" "acl" "noatime" "discard=async" "barrier" "datacow" "datasum" "noautodefrag" "noflushoncommit" "space_cache=v2" "compress=zstd:3" "thread_pool=4" "commit=60" ];
       };
 
  ## Home
     "/home" = {
-      device = "/dev/disk/by-uuid/11111111-7469-7469-7469-111111111111";
-      fsType = "btrfs";
-      options = [ "subvol=Home/Nix" "ssd" "rw" "exec" "noatime" "discard=async" "barrier" "datacow" "datasum" "autodefrag" "flushoncommit" "space_cache=v2" "compress-force=zstd:15" "commit=60" "thread_pool=6" ];
+      device = "/ZIN/Linux/Home/Nix";
+      fsType = "none";
+      options = [ "bind" ];
+      depends = [ "/ZIN" ];
       };
 
  ## Flatpak
-    "/home/CAESFIR/.var/app" = {
-      device = "/dev/disk/by-uuid/11111111-7469-7469-7469-111111111111";
-      fsType = "btrfs";
-      options = [ "subvol=Flatpak" "ssd" "rw" "exec" "noatime" "discard=async" "barrier" "datacow" "datasum" "autodefrag" "flushoncommit" "space_cache=v2" "compress-force=zstd:15" "commit=60" "thread_pool=6" ];
+
+  # Flatpak Apps
+    "/var/lib/flatpak" = {
+      device = "/ZIN/Linux/Flatpak/App";
+      fsType = "none";
+      options = [ "bind" ];
+      depends = [ "/ZIN" ];
+      };
+
+  # Flatpak Configs
+    "/home/Feral/.var/app" = {
+      device = "/ZIN/Linux/Flatpak/Config";
+      fsType = "none";
+      options = [ "bind" ];
+      depends = [ "/ZIN" ];
       };
 
  ## Root | /dev/sda2 | /
     "/" = {
       device = "/dev/disk/by-uuid/22222222-7469-7469-7469-222222222222";
       fsType = "btrfs";
-      options = [ "ssd" "rw" "exec" "relatime" "discard=async" "barrier" "datacow" "datasum" "autodefrag" "flushoncommit" "space_cache=v2" "compress-force=zstd:15" "commit=60" "thread_pool=6" ];
+      options = [ "ssd" "rw" "exec" "acl" "noatime" "discard=async" "barrier" "datacow" "datasum" "noautodefrag" "noflushoncommit" "space_cache=v2" "compress=zstd:3" "thread_pool=4" "commit=60" ];
       };
 
  ## Boot | /dev/sda3 | /boot

@@ -28,7 +28,7 @@
 
   home.sessionVariables = {
     NIXOS_OZONE_WL = "1";
-    LILIPOD_HOME="/home/CAESFIR/db";
+    LILIPOD_HOME="/home/Feral/db";
     };
 
   xdg.configFile."uwsm/env".source = "${config.home.sessionVariablesPackage}/etc/profile.d/hm-session-vars.sh";

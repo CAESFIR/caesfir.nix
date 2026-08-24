@@ -23,6 +23,7 @@
     };
   # X
     xserver = {
+      enable = false;
       videoDrivers = [ "nvidia" ];
     };
   # Pipewire

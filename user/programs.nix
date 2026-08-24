@@ -19,7 +19,7 @@
           root = false;
           pull = true;
           image = "archlinux:latest";
-          home = "/home/CAESFIR/db/home/Arch";
+          home = "/home/Feral/db/home/Arch";
           hostname = "ZIN";
           volume= [ "/ZIN:/ZIN" "/I:/I" "/II:/II" "/III:/III" ];
 #          additional_flags = [ "device=nvidia.com/gpu=all" ];
@@ -34,7 +34,7 @@
           root = false;
           pull = true;
           image = "fedora:rawhide";
-          home = "/home/CAESFIR/db/home/Fedora";
+          home = "/home/Feral/db/home/Fedora";
           hostname = "ZIN";
           volume= [ "/ZIN:/ZIN" "/I:/I" "/II:/II" "/III:/III" ];
 #          additional_flags = [ "device=nvidia.com/gpu=all" ];
@@ -49,7 +49,7 @@
           root = false;
           pull = true;
           image = "debian:unstable";
-          home = "/home/CAESFIR/db/home/Debian";
+          home = "/home/Feral/db/home/Debian";
           hostname = "ZIN";
           volume= [ "/ZIN:/ZIN" "/I:/I" "/II:/II" "/III:/III" ];
 #          additional_flags = [ "device=nvidia.com/gpu=all" ];

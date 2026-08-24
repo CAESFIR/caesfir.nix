@@ -9,7 +9,7 @@
 ### Boot
   boot = {
     initrd = {
-      availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "uas" "usb_storage" "sd_mod" ];
+      availableKernelModules = [ "xhci_pci" "nvme" "ahci" "usbhid" "uas" "usb_storage" "sd_mod" ];
       kernelModules = [ "nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" ];
       extraFiles = {
       "/lib/firmware/edid/DP-3".source = ../edid/DP-3;
@@ -18,7 +18,7 @@
     };
     kernelPackages = pkgs.linuxPackages_latest;
     kernelModules = [ "kvm-intel" "kvm-amd" "ntsync" ];
-    kernelParams = [ "loglevel=0" "udev.log_level=3" "quiet" "splash" "nosgx" "mitigations=off" "drm.edid_firmware=DP-3:edid/DP-3,HDMI-A-1:edid/HDMI-A-1" ];
+    kernelParams = [ "quiet" "splash" "nosgx" "mitigations=off" "drm.edid_firmware=DP-3:edid/DP-3,HDMI-A-1:edid/HDMI-A-1" ];
     extraModprobeConfig = ''
       options snd-hda-intel patch=hda-jack-retask.fw
     '';

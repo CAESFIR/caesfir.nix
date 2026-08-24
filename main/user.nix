@@ -6,11 +6,11 @@
       useGlobalPkgs = true;
       useUserPackages = true;
       extraSpecialArgs = { inherit inputs; };
-      users.CAESFIR = {
+      users.Feral = {
         home = {
           stateVersion = "26.11";
-          username = "CAESFIR";
-          homeDirectory = "/home/CAESFIR";
+          username = "Feral";
+          homeDirectory = "/home/Feral";
           };
         imports = [
           ../user/modules.nix

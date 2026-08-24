@@ -4,6 +4,8 @@
 
 # Hardware
   hardware = {
+  # Firmware
+    enableRedistributableFirmware = true;
   # Bluetooth
     bluetooth.enable = true;
   # Steam Hardware

@@ -9,32 +9,32 @@
     ## Discord
       # Stable
         (discord.override {
-        withOpenASAR = true;
+#         withOpenASAR = true;
         })
       # PTB
         (discord-ptb.override {
-        withOpenASAR = true;
+#         withOpenASAR = true;
         })
       # Canary
         (discord-canary.override {
-        withOpenASAR = true;
+#         withOpenASAR = true;
         })
       # Development
         (discord-development.override {
-        withOpenASAR = true;
+#         withOpenASAR = true;
         })
       # Vesktop
-        vesktop
+#         vesktop
     ## Tools
         curl
         wget
-        wine-staging                    # WINE
-        android-translation-layer       # ATL
-        lilipod
-        arch-install-scripts
+#         wine-staging                    # WINE
+#         android-translation-layer       # ATL
+#         lilipod
+#         arch-install-scripts
         steamguard-cli
         steamcmd
-        gparted
+#         gparted
 #         ouch
         efibootmgr
 #         patchelf

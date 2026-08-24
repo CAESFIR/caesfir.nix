@@ -2,17 +2,22 @@
 
 {
 
-  virtualisation = {
-    waydroid.enable = true;
-    podman = {
-      enable = true;
-      dockerCompat = true;
-      dockerSocket.enable = true;
+#   virtualisation = {
+#     waydroid.enable = true;
+#     qemu = {
+#       firmware.enable = true;
+#       enableSharedMemory = true;
+#       };
+#     podman = {
+#       enable = true;
+#       enableNvidia = true;
+#       dockerCompat = true;
+#       dockerSocket.enable = true;
 #      networkSocket.enable = true;
-      networkSocket.openFirewall = true;
-      autoPrune.enable = true;
-      autoPrune.dates = "daily";
-    };
-  };
+#       networkSocket.openFirewall = true;
+#       autoPrune.enable = true;
+#       autoPrune.dates = "daily";
+#     };
+#   };
 
 }

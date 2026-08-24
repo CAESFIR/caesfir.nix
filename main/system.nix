@@ -9,7 +9,9 @@
     [
     ### Nix
       ../system/boot.nix
+      ../system/chaotic.nix
       ../system/environment.nix
+      ../system/exclude.nix
       ../system/fileSystems.nix
       ../system/fonts.nix
       ../system/hardware.nix
@@ -25,6 +27,7 @@
     nix.extraOptions = ''
       !include /etc/nix/git.conf
     '';
+
   # XDG
     xdg = {
       autostart = {
@@ -46,15 +49,15 @@
       localBinInPath = true;
       stub-ld.enable = true;
       sessionVariables = {
-      XDG_DESKTOP_DIR="/ZIN/XDG/Desktop";
-      XDG_DOCUMENTS_DIR="/ZIN/XDG/Documents";
-      XDG_DOWNLOAD_DIR="/ZIN/XDG/Downloads";
-      XDG_MUSIC_DIR="/ZIN/XDG/Music";
-      XDG_PICTURES_DIR="/ZIN/XDG/Pictures";
-      XDG_PROJECTS_DIR="/ZIN/XDG/Projects";
-      XDG_PUBLICSHARE_DIR="/ZIN/XDG/Public";
-      XDG_TEMPLATES_DIR="/ZIN/XDG/Templates";
-      XDG_VIDEOS_DIR="/ZIN/XDG/Videos";
+      XDG_DESKTOP_DIR      =  "/ZIN/Linux/XDG/Desktop";
+      XDG_DOCUMENTS_DIR    =  "/ZIN/Linux/XDG/Documents";
+      XDG_DOWNLOAD_DIR     =  "/ZIN/Linux/XDG/Downloads";
+      XDG_MUSIC_DIR        =  "/ZIN/Linux/XDG/Music";
+      XDG_PICTURES_DIR     =  "/ZIN/Linux/XDG/Pictures";
+      XDG_PROJECTS_DIR     =  "/ZIN/Linux/XDG/Projects";
+      XDG_PUBLICSHARE_DIR  =  "/ZIN/Linux/XDG/Public";
+      XDG_TEMPLATES_DIR    =  "/ZIN/Linux/XDG/Templates";
+      XDG_VIDEOS_DIR       =  "/ZIN/Linux/XDG/Videos";
         };
       };
 
@@ -63,7 +66,6 @@
      substituters = ["https://hyprland.cachix.org"];
      trusted-substituters = ["https://hyprland.cachix.org"];
      trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-     trusted-users = ["root" "@wheel"];
     };
 
   # Sudo password
@@ -77,7 +79,7 @@
   # Electron Wayland
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
-    LILIPOD_HOME="/home/CAESFIR/db";
+    LILIPOD_HOME="/home/Feral/db";
   };
 
   networking.nftables.enable = true;
@@ -104,12 +106,6 @@
     platformTheme = "kde";
     };
 
-# Nix Settings
-  nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
-    download-buffer-size = 10000000000;
-  };
-
  # Locales
    i18n.defaultLocale = "en_US.UTF-8";
    console = {
@@ -118,14 +114,59 @@
    };
 
 # System
-  system.autoUpgrade = {
-    enable = true;
-    allowReboot = true;
-    };
+  system = {
+    autoUpgrade = {
+      enable = true;
+      allowReboot = true;
+      channel = "https://channels.nixos.org/nixos-unstable";
+      operation = "boot";
+      runGarbageCollection = true;
+      upgrade = true;
+        };
+#     nixos = {
+#       codeName = "";
+#       label = "";
+#       release = "";
+#       variantName = "";
+#         };
+    switch = {
+      enable = true;
+        };
+      };
   
-  nix.optimise.automatic = true;
-  nix.optimise.dates = [ "00:00" ];
-  nix.settings.auto-optimise-store = true;
+# Nix
+  nix = {
+    enable = true;
+    channel.enable = true;
+    checkConfig = true;
+    daemon = {
+      enable = true;
+        };
+    daemonUser = "root";
+    daemonGroup = "root";
+    daemonIOSchedClass = "best-effort";
+    daemonIOSchedPriority = 3;
+    daemonCPUSchedPolicy = "batch";
+    firewall = {
+      enable = false;
+        };
+    optimise = {
+      automatic = true;
+        };
+    gc = {
+      automatic = true;
+        };
+    settings = {
+      cores = 4;
+      max-jobs = 4;
+      sandbox = true;
+      trusted-users = [ "root" "@wheel" ];
+      auto-optimise-store = true;
+      experimental-features = [ "nix-command" "flakes" ];
+      download-buffer-size = 10000000000;
+        };
+    };
+
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
@@ -137,12 +178,12 @@
   nixpkgs.config.allowUnfree = true;
 
   ### Users / Groups
-  users.users.CAESFIR = {
+  users.users.Feral = {
     shell = pkgs.zsh;
     isNormalUser = true;
     uid = 1000;
-    group = "CAESFIR";
-    extraGroups = [ "CAESFIR" "wheel" "gamemode" ];
+    group = "Feral";
+    extraGroups = [ "Feral" "wheel" "gamemode" ];
     packages = with pkgs; [
       ];
     subGidRanges = [{
@@ -155,7 +196,7 @@
       }];
     };
 
-  users.groups.CAESFIR = {
+  users.groups.Feral = {
     gid = 1000;
   };
 
