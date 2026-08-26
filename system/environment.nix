@@ -60,7 +60,7 @@
           typescript
      ## inputs
         (with inputs; [
-          firefox-nightly.packages.${stdenv.hostPlatform.system}.firefox-nightly-bin
+#          firefox-nightly.packages.${stdenv.hostPlatform.system}.firefox-nightly-bin
           nixos-conf-editor.packages.${stdenv.hostPlatform.system}.nixos-conf-editor
           nix-software-center.packages.${stdenv.hostPlatform.system}.nix-software-center
         ])

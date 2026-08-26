@@ -23,7 +23,10 @@
       enable = true;
     };
   # Plasma Browser Integration
-    chromium.enablePlasmaBrowserIntegration = false;
+    chromium = {
+      enable = true;
+      enablePlasmaBrowserIntegration = true;
+      };
   # ZSH
     zsh = {
       enable = true;
@@ -92,11 +95,11 @@
     steam = {
       enable = true;
       package = pkgs.millennium-steam;
-      extest.enable = false;
+      extest.enable = true;
       protontricks.enable = false;
       extraPackages = with pkgs; [
-#         gamemode
-#         gamescope
+        gamemode
+        gamescope
         ];
       gamescopeSession = {
         enable = true;

@@ -2,7 +2,7 @@
   description = "Nix Flake";
 
   inputs = {
-  ## MAIN
+### Core
    # NixPKGs
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
    # Chaotic Nyx
@@ -12,7 +12,12 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
       };
-  ## Configs
+   # NUR
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+      };
+### Configs
    # Nix Software Center
     nix-software-center = {
       url = "github:snowfallorg/nix-software-center";
@@ -23,7 +28,7 @@
       url = "github:snowfallorg/nixos-conf-editor";
       inputs.nixpkgs.follows = "nixpkgs";
       };
-  ## Apps
+### Apps
    # FireFox Nightly
     firefox-nightly = {
       url = "github:nix-community/flake-firefox-nightly";
@@ -34,13 +39,7 @@
       url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
       inputs.nixpkgs.follows = "nixpkgs";
       };
-  ## Plasma Manager
-    plasma-manager = {
-      url = "github:nix-community/plasma-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-      };
-  ## WM
+### WM
    # Hyprland
     hyprland = {
       url = "github:hyprwm/Hyprland";
@@ -60,6 +59,23 @@
       url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
       };
+### Tools
+   # Plasma Manager
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+      };
+   # Nix LD
+    nix-ld = {
+      url = "github:nix-community/nix-ld";
+      inputs.nixpkgs.follows = "nixpkgs";
+      };
+   # Stylix
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      };
 ### Third Party
 
   ## Spicetify
@@ -77,15 +93,18 @@
     nixpkgs,                       # NixPKGs
     chaotic,                       # Chaotic Nyx
     home-manager,                  # Home Manager
+    nur,                           # NUR
     nix-software-center,           # Nix Software Center
     nixos-conf-editor,             # NixOS Conf Editor
     firefox-nightly,               # Firefox Nightly
     millennium,                    # Steam Millennium
-    plasma-manager,                # Plasma Manager
     hyprland,                      # Hyprland
     quickshell,                    # Quickshell
     noctalia,                      # Noctalia Shell
     caelestia,                     # Caelestia Shell
+    plasma-manager,                # Plasma Manager
+    nix-ld,                        # LD
+    stylix,                        # Stylix
     spicetify,                     # Spicetify
     ...
     }: {

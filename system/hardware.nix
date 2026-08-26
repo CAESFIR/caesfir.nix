@@ -16,7 +16,6 @@
       (pkgs.runCommand "edid" {} ''
       mkdir -p $out/lib/firmware/edid
       cp ${../edid/DP-3} $out/lib/firmware/edid/DP-3
-      cp ${../edid/HDMI-A-1} $out/lib/firmware/edid/HDMI-A-1
       '')
      # HDA-Jack-Retask
       (pkgs.runCommand "audio" {} ''
