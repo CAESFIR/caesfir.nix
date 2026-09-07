@@ -54,6 +54,9 @@
           gtk3
           pango
           expat
+          qt6.qtbase
+          qt6.qtdeclarative
+          qt6.qtwayland
     # Xorg | X11
           libx11
           libxext

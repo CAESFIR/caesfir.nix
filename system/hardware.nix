@@ -15,7 +15,7 @@
      # EDID
       (pkgs.runCommand "edid" {} ''
       mkdir -p $out/lib/firmware/edid
-      cp ${../edid/DP-3} $out/lib/firmware/edid/DP-3
+      cp ${../edid/DP-3.bin} $out/lib/firmware/edid/DP-3.bin
       '')
      # HDA-Jack-Retask
       (pkgs.runCommand "audio" {} ''
@@ -33,19 +33,17 @@
     cpu = {
       amd = {
         updateMicrocode = true;
-        microcodePackage = pkgs.microcode-amd;
         };
       intel = {
         updateMicrocode = true;
-        microcodePackage = pkgs.microcode-intel;
         };
       };
 
   # Nvidia
-    nvidia-container-toolkit = {
-      enable = true;
-      mount-nvidia-executables = true;
-      };
+#     nvidia-container-toolkit = {
+#       enable = true;
+#       mount-nvidia-executables = true;
+#       };
     nvidia = {
       open = true;
       nvidiaPersistenced = true;

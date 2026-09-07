@@ -6,13 +6,20 @@
 
   ## Plasma
     plasma6.excludePackages = with pkgs.kdePackages; [
-      kwin-x11
-      ocean-sound-theme
-      plasma-keyboard
-      qtvirtualkeyboard
       baloo
       milou
       drkonqi
+      ocean-sound-theme
+      kdeplasma-addons
+      kinfocenter
+      kwin-x11
+      elisa
+      okular
+      khelpcenter
+      baloo-widgets
+      krdp
+      plasma-keyboard
+      qtvirtualkeyboard
       ];
 
   ## GNOME

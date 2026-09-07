@@ -12,12 +12,12 @@
       availableKernelModules = [ "xhci_pci" "nvme" "ahci" "usbhid" "uas" "usb_storage" "sd_mod" ];
       kernelModules = [ "nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" ];
       extraFiles = {
-      "/lib/firmware/edid/DP-3".source = ../edid/DP-3;
+      "/lib/firmware/edid/DP-3.bin".source = ../edid/DP-3.bin;
       };
     };
     kernelPackages = pkgs.linuxPackages_latest;
     kernelModules = [ "kvm-intel" "kvm-amd" "ntsync" ];
-    kernelParams = [ "quiet" "splash" "nosgx" "mitigations=off" "drm.edid_firmware=DP-3:edid/DP-3" ];
+    kernelParams = [ "quiet" "splash" "nosgx" "clocksource=tsc" "tsc=reliable" "random.trust_cpu=on" "split_lock_detect=off" "nowatchdog" "apparmor=0" "selinux=0" "audit=0" "intel_iommu=on" "amd_iommu=on" "iommu=pt" "tsx=on" "mitigations=off" "drm.edid_firmware=DP-3:edid/DP-3.bin" ];
     extraModprobeConfig = ''
       options snd-hda-intel patch=hda-jack-retask.fw
     '';

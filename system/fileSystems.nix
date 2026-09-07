@@ -10,7 +10,7 @@
     "/ZIN" = {
       device = "/dev/disk/by-uuid/11111111-7469-7469-7469-111111111111";
       fsType = "btrfs";
-      options = [ "ssd" "rw" "exec" "acl" "noatime" "discard=async" "barrier" "datacow" "datasum" "noautodefrag" "noflushoncommit" "space_cache=v2" "compress=zstd:3" "thread_pool=4" "commit=60" ];
+      options = [ "ssd" "rw" "exec" "acl" "noatime" "discard=async" "noautodefrag" "noflushoncommit" "space_cache=v2" "compress=zstd:3" "thread_pool=4" "commit=60" ];
       };
 
  ## Home
@@ -43,14 +43,14 @@
     "/" = {
       device = "/dev/disk/by-uuid/22222222-7469-7469-7469-222222222222";
       fsType = "btrfs";
-      options = [ "ssd" "rw" "exec" "acl" "noatime" "discard=async" "barrier" "datacow" "datasum" "noautodefrag" "noflushoncommit" "space_cache=v2" "compress=zstd:3" "thread_pool=4" "commit=60" ];
+      options = [ "ssd" "rw" "exec" "acl" "noatime" "discard=async" "noautodefrag" "noflushoncommit" "space_cache=v2" "compress=zstd:3" "thread_pool=4" "commit=60" ];
       };
 
  ## Boot | /dev/sda3 | /boot
     "/boot" = {
       device = "/dev/disk/by-uuid/3333-7469";
       fsType = "vfat";
-      options = [ "rw" "relatime" "umask=0022" "shortname=mixed" "utf8" "errors=remount-ro"];
+      options = [ "rw" "noatime" "umask=0022" "shortname=mixed" "utf8" "errors=remount-ro"];
       };
 
 ### HDD

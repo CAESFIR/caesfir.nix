@@ -94,13 +94,13 @@
   # Steam
     steam = {
       enable = true;
-      package = pkgs.millennium-steam;
-      extest.enable = true;
+#       package = pkgs.millennium-steam;
+      extest.enable = false;
       protontricks.enable = false;
-      extraPackages = with pkgs; [
-        gamemode
-        gamescope
-        ];
+#       extraPackages = with pkgs; [
+#         gamemode
+#         gamescope
+#         ];
       gamescopeSession = {
         enable = true;
         steamArgs = [

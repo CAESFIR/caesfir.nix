@@ -28,6 +28,7 @@
       !include /etc/nix/git.conf
     '';
 
+    appstream.enable = true;
   # XDG
     xdg = {
       autostart = {
@@ -49,15 +50,18 @@
       localBinInPath = true;
       stub-ld.enable = true;
       sessionVariables = {
-      XDG_DESKTOP_DIR      =  "/ZIN/Linux/XDG/Desktop";
-      XDG_DOCUMENTS_DIR    =  "/ZIN/Linux/XDG/Documents";
-      XDG_DOWNLOAD_DIR     =  "/ZIN/Linux/XDG/Downloads";
-      XDG_MUSIC_DIR        =  "/ZIN/Linux/XDG/Music";
-      XDG_PICTURES_DIR     =  "/ZIN/Linux/XDG/Pictures";
-      XDG_PROJECTS_DIR     =  "/ZIN/Linux/XDG/Projects";
-      XDG_PUBLICSHARE_DIR  =  "/ZIN/Linux/XDG/Public";
-      XDG_TEMPLATES_DIR    =  "/ZIN/Linux/XDG/Templates";
-      XDG_VIDEOS_DIR       =  "/ZIN/Linux/XDG/Videos";
+        PATH = [
+          "/ZIN/PATH"
+          ];
+        XDG_DESKTOP_DIR      =  "/ZIN/Linux/XDG/Desktop";
+        XDG_DOCUMENTS_DIR    =  "/ZIN/Linux/XDG/Documents";
+        XDG_DOWNLOAD_DIR     =  "/ZIN/Linux/XDG/Downloads";
+        XDG_MUSIC_DIR        =  "/ZIN/Linux/XDG/Music";
+        XDG_PICTURES_DIR     =  "/ZIN/Linux/XDG/Pictures";
+        XDG_PROJECTS_DIR     =  "/ZIN/Linux/XDG/Projects";
+        XDG_PUBLICSHARE_DIR  =  "/ZIN/Linux/XDG/Public";
+        XDG_TEMPLATES_DIR    =  "/ZIN/Linux/XDG/Templates";
+        XDG_VIDEOS_DIR       =  "/ZIN/Linux/XDG/Videos";
         };
       };
 
@@ -183,7 +187,7 @@
     isNormalUser = true;
     uid = 1000;
     group = "Feral";
-    extraGroups = [ "Feral" "wheel" "gamemode" ];
+    extraGroups = [ "Feral" "wheel" "gamemode"];
     packages = with pkgs; [
       ];
     subGidRanges = [{

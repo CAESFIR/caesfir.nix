@@ -9,39 +9,33 @@
     ## Discord
       # Stable
         (discord.override {
-#         withOpenASAR = true;
-        })
-      # PTB
-        (discord-ptb.override {
-#         withOpenASAR = true;
+        withOpenASAR = true;
         })
       # Canary
         (discord-canary.override {
-#         withOpenASAR = true;
+        withOpenASAR = true;
         })
       # Development
         (discord-development.override {
-#         withOpenASAR = true;
+        withOpenASAR = true;
         })
-      # Vesktop
-#         vesktop
+#       # PTB
+#         (discord-ptb.override {
+# #         withOpenASAR = true;
+#         })
+        betterdiscord-installer
+
+        (appimage-run.override {
+        extraPkgs = pkgs: with pkgs; [
+        zstd
+        ];
+        })
     ## Tools
         curl
         wget
-#         wine-staging                    # WINE
-#         android-translation-layer       # ATL
-#         lilipod
-#         arch-install-scripts
         steamguard-cli
         steamcmd
-#         gparted
-#         ouch
         efibootmgr
-#         patchelf
-#         auto-patchelf
-#         unar
-#         winetricks
-        joplin-desktop
     ## File Systems
         btrfs-progs                     # BTRFS
         e2fsprogs                       # EXT4
@@ -55,12 +49,20 @@
 #         wimlib
 #         chntpw
 #         cdrtools
+    ## Steamy
+        jq
+        unzip
+        libnotify
     ## MSR
-          playwright
-          typescript
-     ## inputs
+        playwright
+        typescript
+    ## Extras
+        kitty
+        flatpak-builder
+        detect-it-easy
+        scanmem
+    ## inputs
         (with inputs; [
-#          firefox-nightly.packages.${stdenv.hostPlatform.system}.firefox-nightly-bin
           nixos-conf-editor.packages.${stdenv.hostPlatform.system}.nixos-conf-editor
           nix-software-center.packages.${stdenv.hostPlatform.system}.nix-software-center
         ])

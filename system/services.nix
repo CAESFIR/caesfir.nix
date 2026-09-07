@@ -19,7 +19,7 @@
   # fwupd
     fwupd = {
       enable = true;
-      extraRemotes = [ "vendor-directory" "lvfs-embargo" "lvfs-testing" "lvfs" ];
+      extraRemotes = [ "lvfs" "lvfs-embargo" "lvfs-testing" "vendor" "vendor-directory" ];
     };
   # X
     xserver = {
