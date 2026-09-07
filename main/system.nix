@@ -187,7 +187,7 @@
     isNormalUser = true;
     uid = 1000;
     group = "Feral";
-    extraGroups = [ "Feral" "wheel" "gamemode"];
+    extraGroups = [ "Feral" "wheel" "gamemode" ];
     packages = with pkgs; [
       ];
     subGidRanges = [{
