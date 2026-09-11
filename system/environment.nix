@@ -20,8 +20,6 @@
         withOpenASAR = true;
         })
 
-        betterdiscord-installer
-
         (appimage-run.override {
         extraPkgs = pkgs: with pkgs; [
         zstd
@@ -54,8 +52,6 @@
         playwright
         typescript
     ## Extras
-        kitty
-        flatpak-builder
         detect-it-easy
         scanmem
     ## inputs

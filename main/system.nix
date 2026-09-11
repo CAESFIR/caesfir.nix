@@ -28,9 +28,6 @@
       !include /etc/nix/git.conf
     '';
 
-  # Lix
-
-
     appstream.enable = true;
   # XDG
     xdg = {
