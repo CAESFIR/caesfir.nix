@@ -28,6 +28,9 @@
       !include /etc/nix/git.conf
     '';
 
+  # Lix
+
+
     appstream.enable = true;
   # XDG
     xdg = {
@@ -141,6 +144,7 @@
 # Nix
   nix = {
     enable = true;
+    package = pkgs.lixPackageSets.latest.lix;
     channel.enable = true;
     checkConfig = true;
     daemon = {
@@ -167,7 +171,7 @@
       trusted-users = [ "root" "@wheel" ];
       auto-optimise-store = true;
       experimental-features = [ "nix-command" "flakes" ];
-      download-buffer-size = 10000000000;
+#       download-buffer-size = 10000000000;
         };
     };
 

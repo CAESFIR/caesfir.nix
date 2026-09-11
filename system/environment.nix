@@ -19,10 +19,7 @@
         (discord-development.override {
         withOpenASAR = true;
         })
-#       # PTB
-#         (discord-ptb.override {
-# #         withOpenASAR = true;
-#         })
+
         betterdiscord-installer
 
         (appimage-run.override {
